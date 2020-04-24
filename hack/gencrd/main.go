@@ -21,8 +21,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"go.kubepack.dev/installer/apis/installer/install"
-	"go.kubepack.dev/installer/apis/installer/v1alpha1"
+	"kubepack.dev/installer/apis/installer/install"
+	"kubepack.dev/installer/apis/installer/v1alpha1"
 
 	gort "github.com/appscode/go/runtime"
 	"github.com/go-openapi/spec"
@@ -62,14 +62,14 @@ func generateSwaggerJson() {
 		},
 		//nolint:govet
 		Resources: []openapi.TypeInfo{
-			{v1alpha1.SchemeGroupVersion, v1alpha1.ResourceGrafanaOperators, v1alpha1.ResourceKindGrafanaOperator, true},
+			{v1alpha1.SchemeGroupVersion, v1alpha1.ResourceKubepackOperators, v1alpha1.ResourceKindKubepackOperator, true},
 		},
 	})
 	if err != nil {
 		glog.Fatal(err)
 	}
 
-	filename := gort.GOPath() + "/src/go.kubepack.dev/installer/api/openapi-spec/swagger.json"
+	filename := gort.GOPath() + "/src/kubepack.dev/installer/api/openapi-spec/swagger.json"
 	err = os.MkdirAll(filepath.Dir(filename), 0755)
 	if err != nil {
 		glog.Fatal(err)

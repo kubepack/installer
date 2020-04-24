@@ -5,19 +5,19 @@
 apiVersion: admissionregistration.k8s.io/v1beta1
 kind: ValidatingWebhookConfiguration
 metadata:
-  name: validators.kubepack.dev
+  name: validators.kubepack.com
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
   annotations:
-    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
 webhooks:
-- name: dashboards.validators.kubepack.dev
+- name: dashboards.validators.kubepack.com
   clientConfig:
     service:
       namespace: default
       name: kubernetes
-      path: /apis/validators.kubepack.dev/v1alpha1/dashboardvalidators
+      path: /apis/validators.kubepack.com/v1alpha1/dashboardvalidators
     caBundle: {{ b64enc .Values.apiserver.ca }}
   rules:
   - operations:

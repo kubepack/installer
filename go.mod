@@ -1,9 +1,9 @@
-module go.kubepack.dev/installer
+module kubepack.dev/installer
 
 go 1.12
 
 require (
-	github.com/appscode/go v0.0.0-20191119085241-0887d8ec2ecc
+	github.com/appscode/go v0.0.0-20200323182826-54e98e09185a
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/go-openapi/spec v0.19.2
 	github.com/go-openapi/swag v0.19.4 // indirect
@@ -13,6 +13,7 @@ require (
 	github.com/google/gofuzz v1.0.0
 	github.com/prometheus/client_golang v1.1.0 // indirect
 	github.com/stretchr/testify v1.4.0 // indirect
+	github.com/yudai/gojsondiff v1.0.0
 	golang.org/x/sys v0.0.0-20190801041406-cbf593c0f2f3 // indirect
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 	k8s.io/api v0.0.0-20191114100352-16d7abae0d2a
@@ -20,7 +21,7 @@ require (
 	k8s.io/apimachinery v0.16.5-beta.1
 	k8s.io/client-go v12.0.0+incompatible
 	k8s.io/kube-openapi v0.0.0-20190816220812-743ec37842bf
-	kmodules.xyz/client-go v0.0.0-20200108114229-70ba8841e60f
+	kmodules.xyz/client-go v0.0.0-20200305091010-36ee6a593ed3
 	kmodules.xyz/crd-schema-fuzz v0.0.0-20191129174258-81f984340891
 	sigs.k8s.io/yaml v1.1.0
 )

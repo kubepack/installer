@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ template "kubepack-operator.fullname" . }}
+  name: {{ include "kubepack-operator.fullname" . }}
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
 rules:

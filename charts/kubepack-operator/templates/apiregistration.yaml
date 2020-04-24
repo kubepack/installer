@@ -20,15 +20,15 @@
 apiVersion: apiregistration.k8s.io/v1beta1
 kind: APIService
 metadata:
-  name: v1alpha1.validators.kubepack.dev
+  name: v1alpha1.validators.kubepack.com
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
 spec:
-  group: validators.kubepack.dev
+  group: validators.kubepack.com
   version: v1alpha1
   service:
     namespace: {{ .Release.Namespace }}
-    name: {{ template "kubepack-operator.fullname" . }}
+    name: {{ include "kubepack-operator.fullname" . }}
   caBundle: {{ $caCrt }}
   groupPriorityMinimum: {{ .Values.apiserver.groupPriorityMinimum }}
   versionPriority: {{ .Values.apiserver.versionPriority }}
@@ -37,7 +37,7 @@ spec:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: {{ template "kubepack-operator.fullname" . }}-apiserver-cert
+  name: {{ include "kubepack-operator.fullname" . }}-apiserver-cert
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
@@ -53,7 +53,7 @@ data:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: {{ template "kubepack-operator.fullname" . }}-apiserver-cert
+  name: {{ include "kubepack-operator.fullname" . }}-apiserver-cert
   namespace: {{ $promNamespace }}
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
@@ -67,7 +67,7 @@ data:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: {{ template "kubepack-operator.fullname" . }}-apiserver-extension-server-authentication-reader
+  name: {{ include "kubepack-operator.fullname" . }}-apiserver-extension-server-authentication-reader
   namespace: kube-system
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
@@ -77,14 +77,14 @@ roleRef:
   name: extension-apiserver-authentication-reader
 subjects:
 - kind: ServiceAccount
-  name: {{ template "kubepack-operator.serviceAccountName" . }}
+  name: {{ include "kubepack-operator.serviceAccountName" . }}
   namespace: {{ .Release.Namespace }}
 ---
 # to delegate authentication and authorization
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ template "kubepack-operator.fullname" . }}-apiserver-auth-delegator
+  name: {{ include "kubepack-operator.fullname" . }}-apiserver-auth-delegator
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
 roleRef:
@@ -93,5 +93,5 @@ roleRef:
   name: system:auth-delegator
 subjects:
 - kind: ServiceAccount
-  name: {{ template "kubepack-operator.serviceAccountName" . }}
+  name: {{ include "kubepack-operator.serviceAccountName" . }}
   namespace: {{ .Release.Namespace }}

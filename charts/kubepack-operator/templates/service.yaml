@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "kubepack-operator.fullname" . }}
+  name: {{ include "kubepack-operator.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
@@ -19,5 +19,4 @@ spec:
     port: 443
     targetPort: 8443
   selector:
-    app: "{{ template "kubepack-operator.name" . }}"
-    release: "{{ .Release.Name }}"
+    {{- include "kubepack-operator.selectorLabels" . | nindent 4 }}

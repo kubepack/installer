@@ -17,7 +17,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	"go.kubepack.dev/installer/apis/installer"
+	"kubepack.dev/installer/apis/installer"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -54,8 +54,8 @@ func Resource(resource string) schema.GroupResource {
 // Adds the list of known types to api.Scheme.
 func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
-		&GrafanaOperator{},
-		&GrafanaOperatorList{},
+		&KubepackOperator{},
+		&KubepackOperatorList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,
