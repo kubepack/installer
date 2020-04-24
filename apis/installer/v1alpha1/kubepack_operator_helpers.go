@@ -17,11 +17,11 @@ limitations under the License.
 package v1alpha1
 
 import (
-	"go.kubepack.dev/installer/api/crds"
+	"kubepack.dev/installer/api/crds"
 
 	apiextensions "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 )
 
-func (_ GrafanaOperator) CustomResourceDefinition() *apiextensions.CustomResourceDefinition {
-	return crds.MustCustomResourceDefinition(SchemeGroupVersion.WithResource(ResourceGrafanaOperators))
+func (_ KubepackOperator) CustomResourceDefinition() *apiextensions.CustomResourceDefinition {
+	return crds.MustCustomResourceDefinition(SchemeGroupVersion.WithResource(ResourceKubepackOperators))
 }

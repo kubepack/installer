@@ -44,7 +44,7 @@
         }
       }
     },
-    "/apis/installer.kubepack.dev/": {
+    "/apis/installer.kubepack.com/": {
       "get": {
         "description": "get information of a group",
         "consumes": [
@@ -61,9 +61,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev"
+          "installerKubepackCom"
         ],
-        "operationId": "getInstallerSearchlightDevAPIGroup",
+        "operationId": "getInstallerKubepackComAPIGroup",
         "responses": {
           "200": {
             "description": "OK",
@@ -74,7 +74,7 @@
         }
       }
     },
-    "/apis/installer.kubepack.dev/v1alpha1/": {
+    "/apis/installer.kubepack.com/v1alpha1/": {
       "get": {
         "description": "get available resources",
         "consumes": [
@@ -91,9 +91,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "getInstallerSearchlightDevV1alpha1APIResources",
+        "operationId": "getInstallerKubepackComV1alpha1APIResources",
         "responses": {
           "200": {
             "description": "OK",
@@ -104,9 +104,9 @@
         }
       }
     },
-    "/apis/installer.kubepack.dev/v1alpha1/grafanaoperators": {
+    "/apis/installer.kubepack.com/v1alpha1/kubepackoperators": {
       "get": {
-        "description": "list or watch objects of kind GrafanaOperator",
+        "description": "list or watch objects of kind KubepackOperator",
         "consumes": [
           "*/*"
         ],
@@ -121,22 +121,22 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "listInstallerSearchlightDevV1alpha1GrafanaOperatorForAllNamespaces",
+        "operationId": "listInstallerKubepackComV1alpha1KubepackOperatorForAllNamespaces",
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperatorList"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperatorList"
             }
           }
         },
         "x-kubernetes-action": "list",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "parameters": [
@@ -205,9 +205,9 @@
         }
       ]
     },
-    "/apis/installer.kubepack.dev/v1alpha1/namespaces/{namespace}/grafanaoperators": {
+    "/apis/installer.kubepack.com/v1alpha1/namespaces/{namespace}/kubepackoperators": {
       "get": {
-        "description": "list or watch objects of kind GrafanaOperator",
+        "description": "list or watch objects of kind KubepackOperator",
         "consumes": [
           "*/*"
         ],
@@ -222,9 +222,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "listInstallerSearchlightDevV1alpha1NamespacedGrafanaOperator",
+        "operationId": "listInstallerKubepackComV1alpha1NamespacedKubepackOperator",
         "parameters": [
           {
             "uniqueItems": true,
@@ -287,19 +287,19 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperatorList"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperatorList"
             }
           }
         },
         "x-kubernetes-action": "list",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "post": {
-        "description": "create a GrafanaOperator",
+        "description": "create a KubepackOperator",
         "consumes": [
           "*/*"
         ],
@@ -312,16 +312,16 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "createInstallerSearchlightDevV1alpha1NamespacedGrafanaOperator",
+        "operationId": "createInstallerKubepackComV1alpha1NamespacedKubepackOperator",
         "parameters": [
           {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           },
           {
@@ -343,31 +343,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           },
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           },
           "202": {
             "description": "Accepted",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           }
         },
         "x-kubernetes-action": "post",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "delete": {
-        "description": "delete collection of GrafanaOperator",
+        "description": "delete collection of KubepackOperator",
         "consumes": [
           "*/*"
         ],
@@ -380,9 +380,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "deleteInstallerSearchlightDevV1alpha1CollectionNamespacedGrafanaOperator",
+        "operationId": "deleteInstallerKubepackComV1alpha1CollectionNamespacedKubepackOperator",
         "parameters": [
           {
             "uniqueItems": true,
@@ -486,9 +486,9 @@
         },
         "x-kubernetes-action": "deletecollection",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "parameters": [
@@ -509,9 +509,9 @@
         }
       ]
     },
-    "/apis/installer.kubepack.dev/v1alpha1/namespaces/{namespace}/grafanaoperators/{name}": {
+    "/apis/installer.kubepack.com/v1alpha1/namespaces/{namespace}/kubepackoperators/{name}": {
       "get": {
-        "description": "read the specified GrafanaOperator",
+        "description": "read the specified KubepackOperator",
         "consumes": [
           "*/*"
         ],
@@ -524,26 +524,26 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "readInstallerSearchlightDevV1alpha1NamespacedGrafanaOperator",
+        "operationId": "readInstallerKubepackComV1alpha1NamespacedKubepackOperator",
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           }
         },
         "x-kubernetes-action": "get",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "put": {
-        "description": "replace the specified GrafanaOperator",
+        "description": "replace the specified KubepackOperator",
         "consumes": [
           "*/*"
         ],
@@ -556,16 +556,16 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "replaceInstallerSearchlightDevV1alpha1NamespacedGrafanaOperator",
+        "operationId": "replaceInstallerKubepackComV1alpha1NamespacedKubepackOperator",
         "parameters": [
           {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           },
           {
@@ -587,25 +587,25 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           },
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           }
         },
         "x-kubernetes-action": "put",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "delete": {
-        "description": "delete a GrafanaOperator",
+        "description": "delete a KubepackOperator",
         "consumes": [
           "*/*"
         ],
@@ -618,9 +618,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "deleteInstallerSearchlightDevV1alpha1NamespacedGrafanaOperator",
+        "operationId": "deleteInstallerKubepackComV1alpha1NamespacedKubepackOperator",
         "parameters": [
           {
             "name": "body",
@@ -674,13 +674,13 @@
         },
         "x-kubernetes-action": "delete",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "patch": {
-        "description": "partially update the specified GrafanaOperator",
+        "description": "partially update the specified KubepackOperator",
         "consumes": [
           "application/json-patch+json",
           "application/merge-patch+json",
@@ -696,9 +696,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "patchInstallerSearchlightDevV1alpha1NamespacedGrafanaOperator",
+        "operationId": "patchInstallerKubepackComV1alpha1NamespacedKubepackOperator",
         "parameters": [
           {
             "name": "body",
@@ -734,22 +734,22 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
+              "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
             }
           }
         },
         "x-kubernetes-action": "patch",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "parameters": [
         {
           "uniqueItems": true,
           "type": "string",
-          "description": "name of the GrafanaOperator",
+          "description": "name of the KubepackOperator",
           "name": "name",
           "in": "path",
           "required": true
@@ -771,9 +771,9 @@
         }
       ]
     },
-    "/apis/installer.kubepack.dev/v1alpha1/watch/grafanaoperators": {
+    "/apis/installer.kubepack.com/v1alpha1/watch/kubepackoperators": {
       "get": {
-        "description": "watch individual changes to a list of GrafanaOperator. deprecated: use the 'watch' parameter with a list operation instead.",
+        "description": "watch individual changes to a list of KubepackOperator. deprecated: use the 'watch' parameter with a list operation instead.",
         "consumes": [
           "*/*"
         ],
@@ -788,9 +788,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "watchInstallerSearchlightDevV1alpha1GrafanaOperatorListForAllNamespaces",
+        "operationId": "watchInstallerKubepackComV1alpha1KubepackOperatorListForAllNamespaces",
         "responses": {
           "200": {
             "description": "OK",
@@ -801,9 +801,9 @@
         },
         "x-kubernetes-action": "watchlist",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "parameters": [
@@ -872,9 +872,9 @@
         }
       ]
     },
-    "/apis/installer.kubepack.dev/v1alpha1/watch/namespaces/{namespace}/grafanaoperators": {
+    "/apis/installer.kubepack.com/v1alpha1/watch/namespaces/{namespace}/kubepackoperators": {
       "get": {
-        "description": "watch individual changes to a list of GrafanaOperator. deprecated: use the 'watch' parameter with a list operation instead.",
+        "description": "watch individual changes to a list of KubepackOperator. deprecated: use the 'watch' parameter with a list operation instead.",
         "consumes": [
           "*/*"
         ],
@@ -889,9 +889,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "watchInstallerSearchlightDevV1alpha1NamespacedGrafanaOperatorList",
+        "operationId": "watchInstallerKubepackComV1alpha1NamespacedKubepackOperatorList",
         "responses": {
           "200": {
             "description": "OK",
@@ -902,9 +902,9 @@
         },
         "x-kubernetes-action": "watchlist",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "parameters": [
@@ -981,9 +981,9 @@
         }
       ]
     },
-    "/apis/installer.kubepack.dev/v1alpha1/watch/namespaces/{namespace}/grafanaoperators/{name}": {
+    "/apis/installer.kubepack.com/v1alpha1/watch/namespaces/{namespace}/kubepackoperators/{name}": {
       "get": {
-        "description": "watch changes to an object of kind GrafanaOperator. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.",
+        "description": "watch changes to an object of kind KubepackOperator. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.",
         "consumes": [
           "*/*"
         ],
@@ -998,9 +998,9 @@
           "https"
         ],
         "tags": [
-          "installerSearchlightDev_v1alpha1"
+          "installerKubepackCom_v1alpha1"
         ],
-        "operationId": "watchInstallerSearchlightDevV1alpha1NamespacedGrafanaOperator",
+        "operationId": "watchInstallerKubepackComV1alpha1NamespacedKubepackOperator",
         "responses": {
           "200": {
             "description": "OK",
@@ -1011,9 +1011,9 @@
         },
         "x-kubernetes-action": "watch",
         "x-kubernetes-group-version-kind": {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "version": "v1alpha1",
-          "kind": "GrafanaOperator"
+          "kind": "KubepackOperator"
         }
       },
       "parameters": [
@@ -1055,7 +1055,7 @@
         {
           "uniqueItems": true,
           "type": "string",
-          "description": "name of the GrafanaOperator",
+          "description": "name of the KubepackOperator",
           "name": "name",
           "in": "path",
           "required": true
@@ -1100,150 +1100,34 @@
     }
   },
   "definitions": {
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator": {
-      "type": "object",
-      "properties": {
-        "apiVersion": {
-          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-          "type": "string"
-        },
-        "kind": {
-          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-          "type": "string"
-        },
-        "metadata": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
-        },
-        "spec": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperatorSpec"
-        }
-      },
-      "x-kubernetes-group-version-kind": [
-        {
-          "group": "installer.kubepack.dev",
-          "kind": "GrafanaOperator",
-          "version": "v1alpha1"
-        }
-      ]
-    },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperatorList": {
-      "description": "GrafanaOperatorList is a list of GrafanaOperators",
-      "type": "object",
-      "properties": {
-        "apiVersion": {
-          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
-          "type": "string"
-        },
-        "items": {
-          "description": "Items is a list of GrafanaOperator CRD objects",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperator"
-          }
-        },
-        "kind": {
-          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
-          "type": "string"
-        },
-        "metadata": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
-        }
-      },
-      "x-kubernetes-group-version-kind": [
-        {
-          "group": "installer.kubepack.dev",
-          "kind": "GrafanaOperatorList",
-          "version": "v1alpha1"
-        }
-      ]
-    },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.GrafanaOperatorSpec": {
-      "description": "GrafanaOperatorSpec is the spec for redis version",
+    "dev.kubepack.installer.apis.installer.v1alpha1.ContianerRef": {
       "type": "object",
       "required": [
-        "replicaCount",
-        "operator",
-        "cleaner",
-        "imagePullPolicy",
-        "imagePullSecrets",
-        "logLevel",
-        "serviceAccount",
-        "apiserver",
-        "enableAnalytics",
-        "monitoring"
+        "registry",
+        "repository",
+        "tag"
       ],
       "properties": {
-        "affinity": {
-          "description": "If specified, the pod's scheduling constraints",
-          "$ref": "#/definitions/io.k8s.api.core.v1.Affinity"
-        },
-        "annotations": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "apiserver": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.WebHookSpec"
-        },
-        "cleaner": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.ImageRef"
-        },
-        "clusterName": {
+        "registry": {
           "type": "string"
         },
-        "criticalAddon": {
-          "type": "boolean"
-        },
-        "enableAnalytics": {
-          "type": "boolean"
-        },
-        "imagePullPolicy": {
+        "repository": {
           "type": "string"
-        },
-        "imagePullSecrets": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "logLevel": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "monitoring": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.Monitoring"
-        },
-        "nodeSelector": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "operator": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.ImageRef"
-        },
-        "replicaCount": {
-          "type": "integer",
-          "format": "int32"
         },
         "resources": {
           "description": "Compute Resources required by the sidecar container.",
           "$ref": "#/definitions/io.k8s.api.core.v1.ResourceRequirements"
         },
-        "serviceAccount": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.ServiceAccountSpec"
+        "securityContext": {
+          "description": "Security options the pod should run with.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.SecurityContext"
         },
-        "tolerations": {
-          "description": "If specified, the pod's tolerations.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/io.k8s.api.core.v1.Toleration"
-          }
+        "tag": {
+          "type": "string"
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.HealthcheckSpec": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.HealthcheckSpec": {
       "type": "object",
       "properties": {
         "enabled": {
@@ -1251,7 +1135,7 @@
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.ImageRef": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.ImageRef": {
       "type": "object",
       "required": [
         "registry",
@@ -1270,11 +1154,159 @@
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.Monitoring": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator": {
+      "type": "object",
+      "properties": {
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+        },
+        "spec": {
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperatorSpec"
+        }
+      },
+      "x-kubernetes-group-version-kind": [
+        {
+          "group": "installer.kubepack.com",
+          "kind": "KubepackOperator",
+          "version": "v1alpha1"
+        }
+      ]
+    },
+    "dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperatorList": {
+      "description": "KubepackOperatorList is a list of KubepackOperators",
+      "type": "object",
+      "properties": {
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+          "type": "string"
+        },
+        "items": {
+          "description": "Items is a list of KubepackOperator CRD objects",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperator"
+          }
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
+        }
+      },
+      "x-kubernetes-group-version-kind": [
+        {
+          "group": "installer.kubepack.com",
+          "kind": "KubepackOperatorList",
+          "version": "v1alpha1"
+        }
+      ]
+    },
+    "dev.kubepack.installer.apis.installer.v1alpha1.KubepackOperatorSpec": {
+      "description": "KubepackOperatorSpec is the schema for Kubepack Operator values file",
+      "type": "object",
+      "required": [
+        "replicaCount",
+        "operator",
+        "cleaner",
+        "imagePullPolicy",
+        "serviceAccount",
+        "apiserver",
+        "monitoring"
+      ],
+      "properties": {
+        "affinity": {
+          "description": "If specified, the pod's scheduling constraints",
+          "$ref": "#/definitions/io.k8s.api.core.v1.Affinity"
+        },
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "apiserver": {
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.WebHookSpec"
+        },
+        "cleaner": {
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.ImageRef"
+        },
+        "criticalAddon": {
+          "type": "boolean"
+        },
+        "enableAnalytics": {
+          "type": "boolean"
+        },
+        "fullnameOverride": {
+          "type": "string"
+        },
+        "imagePullPolicy": {
+          "type": "string"
+        },
+        "imagePullSecrets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "logLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "monitoring": {
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.Monitoring"
+        },
+        "nameOverride": {
+          "type": "string"
+        },
+        "nodeSelector": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "operator": {
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.ContianerRef"
+        },
+        "podAnnotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "podSecurityContext": {
+          "description": "PodSecurityContext holds pod-level security attributes and common container settings. Optional: Defaults to empty.  See type description for default values of each field.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.PodSecurityContext"
+        },
+        "replicaCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "serviceAccount": {
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.ServiceAccountSpec"
+        },
+        "tolerations": {
+          "description": "If specified, the pod's tolerations.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/io.k8s.api.core.v1.Toleration"
+          }
+        }
+      }
+    },
+    "dev.kubepack.installer.apis.installer.v1alpha1.Monitoring": {
       "type": "object",
       "required": [
         "agent",
-        "operator",
         "prometheus",
         "serviceMonitor"
       ],
@@ -1286,31 +1318,33 @@
           "type": "boolean"
         },
         "prometheus": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.PrometheusSpec"
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.PrometheusSpec"
         },
         "serviceMonitor": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.ServiceMonitorLabels"
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.ServiceMonitorLabels"
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.PrometheusSpec": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.PrometheusSpec": {
       "type": "object",
-      "required": [
-        "namespace"
-      ],
       "properties": {
         "namespace": {
           "type": "string"
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.ServiceAccountSpec": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.ServiceAccountSpec": {
       "type": "object",
       "required": [
-        "create",
-        "name"
+        "create"
       ],
       "properties": {
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
         "create": {
           "type": "boolean"
         },
@@ -1319,11 +1353,8 @@
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.ServiceMonitorLabels": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.ServiceMonitorLabels": {
       "type": "object",
-      "required": [
-        "labels"
-      ],
       "properties": {
         "labels": {
           "type": "object",
@@ -1333,7 +1364,7 @@
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.ServingCerts": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.ServingCerts": {
       "type": "object",
       "required": [
         "generate"
@@ -1353,7 +1384,7 @@
         }
       }
     },
-    "dev.kubepack.go.installer.apis.installer.v1alpha1.WebHookSpec": {
+    "dev.kubepack.installer.apis.installer.v1alpha1.WebHookSpec": {
       "type": "object",
       "required": [
         "groupPriorityMinimum",
@@ -1383,10 +1414,10 @@
           "format": "int32"
         },
         "healthcheck": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.HealthcheckSpec"
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.HealthcheckSpec"
         },
         "servingCerts": {
-          "$ref": "#/definitions/dev.kubepack.go.installer.apis.installer.v1alpha1.ServingCerts"
+          "$ref": "#/definitions/dev.kubepack.installer.apis.installer.v1alpha1.ServingCerts"
         },
         "useKubeapiserverFqdnForAks": {
           "type": "boolean"
@@ -1412,6 +1443,26 @@
         "podAntiAffinity": {
           "description": "Describes pod anti-affinity scheduling rules (e.g. avoid putting this pod in the same node, zone, etc. as some other pod(s)).",
           "$ref": "#/definitions/io.k8s.api.core.v1.PodAntiAffinity"
+        }
+      }
+    },
+    "io.k8s.api.core.v1.Capabilities": {
+      "description": "Adds and removes POSIX capabilities from running containers.",
+      "type": "object",
+      "properties": {
+        "add": {
+          "description": "Added capabilities",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "drop": {
+          "description": "Removed capabilities",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1557,6 +1608,54 @@
         }
       }
     },
+    "io.k8s.api.core.v1.PodSecurityContext": {
+      "description": "PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext.  Field values of container.securityContext take precedence over field values of PodSecurityContext.",
+      "type": "object",
+      "properties": {
+        "fsGroup": {
+          "description": "A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod:\n\n1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw----\n\nIf unset, the Kubelet will not modify the ownership and permissions of any volume.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "runAsGroup": {
+          "description": "The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "runAsNonRoot": {
+          "description": "Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.",
+          "type": "boolean"
+        },
+        "runAsUser": {
+          "description": "The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "seLinuxOptions": {
+          "description": "The SELinux context to be applied to all containers. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.SELinuxOptions"
+        },
+        "supplementalGroups": {
+          "description": "A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container.",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "sysctls": {
+          "description": "Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/io.k8s.api.core.v1.Sysctl"
+          }
+        },
+        "windowsOptions": {
+          "description": "The Windows specific settings applied to all containers. If unspecified, the options within a container's SecurityContext will be used. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.WindowsSecurityContextOptions"
+        }
+      }
+    },
     "io.k8s.api.core.v1.PreferredSchedulingTerm": {
       "description": "An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).",
       "type": "object",
@@ -1593,6 +1692,94 @@
           "additionalProperties": {
             "$ref": "#/definitions/io.k8s.apimachinery.pkg.api.resource.Quantity"
           }
+        }
+      }
+    },
+    "io.k8s.api.core.v1.SELinuxOptions": {
+      "description": "SELinuxOptions are the labels to be applied to the container",
+      "type": "object",
+      "properties": {
+        "level": {
+          "description": "Level is SELinux level label that applies to the container.",
+          "type": "string"
+        },
+        "role": {
+          "description": "Role is a SELinux role label that applies to the container.",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type is a SELinux type label that applies to the container.",
+          "type": "string"
+        },
+        "user": {
+          "description": "User is a SELinux user label that applies to the container.",
+          "type": "string"
+        }
+      }
+    },
+    "io.k8s.api.core.v1.SecurityContext": {
+      "description": "SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext.  When both are set, the values in SecurityContext take precedence.",
+      "type": "object",
+      "properties": {
+        "allowPrivilegeEscalation": {
+          "description": "AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN",
+          "type": "boolean"
+        },
+        "capabilities": {
+          "description": "The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.Capabilities"
+        },
+        "privileged": {
+          "description": "Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.",
+          "type": "boolean"
+        },
+        "procMount": {
+          "description": "procMount denotes the type of proc mount to use for the containers. The default is DefaultProcMount which uses the container runtime defaults for readonly paths and masked paths. This requires the ProcMountType feature flag to be enabled.",
+          "type": "string"
+        },
+        "readOnlyRootFilesystem": {
+          "description": "Whether this container has a read-only root filesystem. Default is false.",
+          "type": "boolean"
+        },
+        "runAsGroup": {
+          "description": "The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "runAsNonRoot": {
+          "description": "Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.",
+          "type": "boolean"
+        },
+        "runAsUser": {
+          "description": "The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "seLinuxOptions": {
+          "description": "The SELinux context to be applied to the container. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.SELinuxOptions"
+        },
+        "windowsOptions": {
+          "description": "The Windows specific settings applied to all containers. If unspecified, the options from the PodSecurityContext will be used. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.WindowsSecurityContextOptions"
+        }
+      }
+    },
+    "io.k8s.api.core.v1.Sysctl": {
+      "description": "Sysctl defines a kernel parameter to be set",
+      "type": "object",
+      "required": [
+        "name",
+        "value"
+      ],
+      "properties": {
+        "name": {
+          "description": "Name of a property to set",
+          "type": "string"
+        },
+        "value": {
+          "description": "Value of a property to set",
+          "type": "string"
         }
       }
     },
@@ -1639,6 +1826,24 @@
           "description": "weight associated with matching the corresponding podAffinityTerm, in the range 1-100.",
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "io.k8s.api.core.v1.WindowsSecurityContextOptions": {
+      "description": "WindowsSecurityContextOptions contain Windows-specific options and credentials.",
+      "type": "object",
+      "properties": {
+        "gmsaCredentialSpec": {
+          "description": "GMSACredentialSpec is where the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the GMSA credential spec named by the GMSACredentialSpecName field. This field is alpha-level and is only honored by servers that enable the WindowsGMSA feature flag.",
+          "type": "string"
+        },
+        "gmsaCredentialSpecName": {
+          "description": "GMSACredentialSpecName is the name of the GMSA credential spec to use. This field is alpha-level and is only honored by servers that enable the WindowsGMSA feature flag.",
+          "type": "string"
+        },
+        "runAsUserName": {
+          "description": "The UserName in Windows to run the entrypoint of the container process. Defaults to the user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. This field is alpha-level and it is only honored by servers that enable the WindowsRunAsUserName feature flag.",
+          "type": "string"
         }
       }
     },
@@ -1866,7 +2071,7 @@
           "version": "v1"
         },
         {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "kind": "DeleteOptions",
           "version": "v1alpha1"
         }
@@ -2201,7 +2406,7 @@
           "version": "v1"
         },
         {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "kind": "Status",
           "version": "v1alpha1"
         }
@@ -2287,7 +2492,7 @@
           "version": "v1"
         },
         {
-          "group": "installer.kubepack.dev",
+          "group": "installer.kubepack.com",
           "kind": "WatchEvent",
           "version": "v1alpha1"
         }

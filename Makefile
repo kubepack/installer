@@ -15,7 +15,7 @@
 
 SHELL=/bin/bash -o pipefail
 
-GO_PKG   := go.kubepack.dev
+GO_PKG   := kubepack.dev
 REPO     := $(notdir $(shell pwd))
 BIN      := installer
 
@@ -61,9 +61,9 @@ ARCH := $(if $(GOARCH),$(GOARCH),$(shell go env GOARCH))
 BASEIMAGE_PROD   ?= gcr.io/distroless/static
 BASEIMAGE_DBG    ?= debian:stretch
 
-GO_VERSION       ?= 1.13.5
+GO_VERSION       ?= 1.14.2
 BUILD_IMAGE      ?= appscode/golang-dev:$(GO_VERSION)
-CHART_TEST_IMAGE ?= quay.io/helmpack/chart-testing:v3.0.0-beta.1
+CHART_TEST_IMAGE ?= quay.io/helmpack/chart-testing:v3.0.0-rc.1
 
 OUTBIN = bin/$(OS)_$(ARCH)/$(BIN)
 ifeq ($(OS),windows)
@@ -172,7 +172,7 @@ gen-crds:
 			paths="./apis/..."              \
 			output:crd:artifacts:config=api/crds
 
-crds_to_patch := installer.kubepack.dev_grafanaoperators.yaml
+crds_to_patch := installer.kubepack.com_kubepackoperators.yaml
 
 .PHONY: patch-crds
 patch-crds: $(addprefix patch-crd-, $(crds_to_patch))
@@ -207,7 +207,7 @@ gen-crd-protos-%:
 			--proto-import=$(DOCKER_REPO_ROOT)/vendor    \
 			--proto-import=$(DOCKER_REPO_ROOT)/third_party/protobuf \
 			--apimachinery-packages=-k8s.io/apimachinery/pkg/api/resource,-k8s.io/apimachinery/pkg/apis/meta/v1,-k8s.io/apimachinery/pkg/apis/meta/v1beta1,-k8s.io/apimachinery/pkg/runtime,-k8s.io/apimachinery/pkg/runtime/schema,-k8s.io/apimachinery/pkg/util/intstr \
-			--packages=-k8s.io/api/core/v1,go.kubepack.dev/installer/apis/$(subst _,/,$*)
+			--packages=-k8s.io/api/core/v1,kubepack.dev/installer/apis/$(subst _,/,$*)
 
 .PHONY: gen-bindata
 gen-bindata:
@@ -223,8 +223,13 @@ gen-bindata:
 	    $(BUILD_IMAGE)                                          \
 	    go-bindata -ignore=\\.go -ignore=\\.DS_Store -mode=0644 -modtime=1573722179 -o bindata.go -pkg crds ./...
 
+.PHONY: gen-values-schema
+gen-values-schema:
+	@yq r api/crds/installer.kubepack.com_kubepackoperators.yaml spec.validation.openAPIV3Schema.properties.spec > /tmp/kubepack-operator-values.openapiv3_schema.yaml
+	@yq d /tmp/kubepack-operator-values.openapiv3_schema.yaml description > charts/kubepack-operator/values.openapiv3_schema.yaml
+
 .PHONY: manifests
-manifests: gen-crds patch-crds label-crds gen-bindata
+manifests: gen-crds patch-crds label-crds gen-bindata gen-values-schema
 
 .PHONY: gen
 gen: clientset gen-crd-protos manifests openapi

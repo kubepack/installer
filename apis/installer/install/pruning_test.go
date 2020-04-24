@@ -19,8 +19,8 @@ package install
 import (
 	"testing"
 
-	"go.kubepack.dev/installer/apis/installer/fuzzer"
-	"go.kubepack.dev/installer/apis/installer/v1alpha1"
+	"kubepack.dev/installer/apis/installer/fuzzer"
+	"kubepack.dev/installer/apis/installer/v1alpha1"
 
 	clientsetscheme "k8s.io/client-go/kubernetes/scheme"
 	crdfuzz "kmodules.xyz/crd-schema-fuzz"
@@ -28,5 +28,5 @@ import (
 
 func TestPruneTypes(t *testing.T) {
 	Install(clientsetscheme.Scheme)
-	crdfuzz.SchemaFuzzTestForV1beta1CRD(t, clientsetscheme.Scheme, v1alpha1.GrafanaOperator{}.CustomResourceDefinition(), fuzzer.Funcs)
+	crdfuzz.SchemaFuzzTestForV1beta1CRD(t, clientsetscheme.Scheme, v1alpha1.KubepackOperator{}.CustomResourceDefinition(), fuzzer.Funcs)
 }

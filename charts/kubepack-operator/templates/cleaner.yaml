@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ template "kubepack-operator.fullname" . }}-cleaner
+  name: {{ include "kubepack-operator.fullname" . }}-cleaner
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "kubepack-operator.labels" . | nindent 4 }}
@@ -13,7 +13,7 @@ spec:
   activeDeadlineSeconds: 120
   template:
     spec:
-      serviceAccountName: {{ template "kubepack-operator.serviceAccountName" . }}
+      serviceAccountName: {{ include "kubepack-operator.serviceAccountName" . }}
       containers:
       - name: kubectl
         image: {{ .Values.cleaner.registry }}/{{ .Values.cleaner.repository }}:{{ .Values.cleaner.tag }}
@@ -21,9 +21,9 @@ spec:
           - sh
           - -c
           - "sleep 2; \
-          kubectl delete validatingwebhookconfigurations validators.kubepack.dev || true; \
-          kubectl delete mutatingwebhookconfiguration mutators.kubepack.dev || true; \
-          kubectl delete apiservice v1alpha1.mutators.kubepack.dev || true; \
-          kubectl delete apiservice v1alpha1.validators.kubepack.dev || true;"
+          kubectl delete validatingwebhookconfigurations validators.kubepack.com || true; \
+          kubectl delete mutatingwebhookconfiguration mutators.kubepack.com || true; \
+          kubectl delete apiservice v1alpha1.mutators.kubepack.com || true; \
+          kubectl delete apiservice v1alpha1.validators.kubepack.com || true;"
         imagePullPolicy: {{ .Values.imagePullPolicy }}
       restartPolicy: Never
