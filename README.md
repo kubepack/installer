@@ -1,1 +1,1 @@
-# Searchlight installers
+# Kubepack installers
