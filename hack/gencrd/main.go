@@ -1,5 +1,5 @@
 /*
-Copyright The Searchlight Authors.
+Copyright The Kubepack Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ func generateSwaggerJson() {
 		Scheme: Scheme,
 		Codecs: Codecs,
 		Info: spec.InfoProps{
-			Title:   "KubeVault Installer",
+			Title:   "Kubepack Installer",
 			Version: "v0.2.0",
 			Contact: &spec.ContactInfo{
 				Name:  "AppsCode Inc.",

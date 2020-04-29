@@ -1,5 +1,5 @@
 /*
-Copyright The Searchlight Authors.
+Copyright The Kubepack Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ const (
 	ResourceKubepackOperators    = "kubepackoperators"
 )
 
-// KubepackOperator defines the schama for KubeVault Operator Installer.
+// KubepackOperator defines the schama for Kubepack Operator Installer.
 
 // +genclient
 // +genclient:skipVerbs=updateStatus
