@@ -16,7 +16,7 @@ operator:
   # Name of operator container image
   repository: kubepack-operator
   # Operator container image tag
-  tag: prototype_linux_amd64
+  tag: v0.1.0
   # Compute Resources required by the operator container
   resources: {}
   # Security options the operator container should run with
