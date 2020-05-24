@@ -88,7 +88,7 @@ apiserver:
   # for more information on proper values of this field
   versionPriority: 15
   # If true, mutating webhook is configured for Kubepack CRDs
-  enableMutatingWebhook: true
+  enableMutatingWebhook: false
   # If true, validating webhook is configured for Kubepack CRDss
   enableValidatingWebhook: false
   # CA certificate used by the Kubernetes api server. This field is automatically assigned by the operator.

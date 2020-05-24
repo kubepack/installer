@@ -12,7 +12,7 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
 webhooks:
-- name: dashboards.mutators.kubepack.com
+- name: applications.mutators.kubepack.com
   clientConfig:
     service:
       namespace: default
@@ -24,11 +24,11 @@ webhooks:
     - CREATE
     - UPDATE
     apiGroups:
-    - kubepack.dev
+    - kubepack.com
     apiVersions:
     - "*"
     resources:
-    - dashboards
+    - applications
   failurePolicy: Fail
 {{- if and (ge $major 1) (ge $minor 12) }}
   sideEffects: None

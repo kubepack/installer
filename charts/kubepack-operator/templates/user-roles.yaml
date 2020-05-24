@@ -10,7 +10,7 @@ metadata:
 rules:
 - apiGroups:
   - appcatalog.appscode.com
-  - kubepack.dev
+  - kubepack.com
   resources:
   - "*"
   verbs: ["*"]
@@ -26,9 +26,9 @@ metadata:
     "helm.sh/hook-delete-policy": before-hook-creation
 rules:
 - apiGroups:
-  - kubepack.dev
+  - kubepack.com
   resources:
-  - dashboards
+  - applications
   verbs: ["*"]
 - apiGroups:
   - appcatalog.appscode.com
@@ -47,9 +47,9 @@ metadata:
     "helm.sh/hook-delete-policy": before-hook-creation
 rules:
 - apiGroups:
-  - kubepack.dev
+  - kubepack.com
   resources:
-  - dashboards
+  - applications
   verbs: ["get", "list", "watch"]
 - apiGroups:
   - appcatalog.appscode.com
