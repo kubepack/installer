@@ -215,8 +215,8 @@ type bintree struct {
 }
 
 var _bintree = &bintree{nil, map[string]*bintree{
-	"installer.kubepack.com_kubepackoperators.v1.yaml": {installerKubepackCom_kubepackoperatorsV1Yaml, map[string]*bintree{}},
-	"installer.kubepack.com_kubepackoperators.yaml":    {installerKubepackCom_kubepackoperatorsYaml, map[string]*bintree{}},
+	"installer.kubepack.com_kubepackoperators.v1.yaml": &bintree{installerKubepackCom_kubepackoperatorsV1Yaml, map[string]*bintree{}},
+	"installer.kubepack.com_kubepackoperators.yaml":    &bintree{installerKubepackCom_kubepackoperatorsYaml, map[string]*bintree{}},
 }}
 
 // RestoreAsset restores an asset under the given directory
