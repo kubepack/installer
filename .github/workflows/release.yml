@@ -74,8 +74,8 @@ jobs:
           git push -u origin HEAD -f
           msg="Publish $GITHUB_REPOSITORY@${{ steps.params.outputs.git_tag }} charts"
           pr_cmd=$(cat <<EOF
-          hub pull-request
-              --labels ${pr_labels:-automerge}
+          hub pull-request \
+              --labels ${pr_labels:-automerge} \
               --message "Publish $GITHUB_REPOSITORY@${{ steps.params.outputs.git_tag }} charts"
           EOF
           )
