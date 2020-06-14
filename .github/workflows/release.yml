@@ -86,4 +86,4 @@ jobs:
             pr_cmd="$pr_cmd --message Release-tracker: ${{ steps.params.outputs.release_tracker }}"
           fi
           pr_cmd="$pr_cmd --message Signed-off-by: $(git config --get user.name) <$(git config --get user.email)>"
-          eval $pr_cmd
+          eval "$pr_cmd"
