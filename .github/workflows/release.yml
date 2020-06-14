@@ -76,7 +76,7 @@ jobs:
           pr_cmd=$(cat <<EOF
           hub pull-request
               --labels ${pr_labels:-automerge}
-              --message \"Publish $GITHUB_REPOSITORY@${{ steps.params.outputs.git_tag }} charts\"
+              --message "Publish $GITHUB_REPOSITORY@${{ steps.params.outputs.git_tag }} charts"
           EOF
           )
           # if [ ! -z  ${{ steps.params.outputs.release }} ]; then
