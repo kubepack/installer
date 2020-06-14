@@ -64,6 +64,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.LGTM_GITHUB_TOKEN }}
         run: |
+          set -x
           pr_branch=${GITHUB_REPOSITORY}/${GITHUB_RUN_ID}
           pr_labels=${{ steps.params.outputs.labels }}
           cd $HOME/charts
