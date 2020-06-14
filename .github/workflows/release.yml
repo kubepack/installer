@@ -76,7 +76,7 @@ jobs:
           pr_cmd=$(cat <<EOF
           hub pull-request
               --labels ${pr_labels:-automerge}
-              --message $msg
+              --message '$msg'
           EOF
           )
           if [ ! -z  ${{ steps.params.outputs.release }} ]; then
