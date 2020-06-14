@@ -75,14 +75,14 @@ jobs:
           pr_cmd=$(cat <<EOF
           hub pull-request
               --labels ${pr_labels:-automerge}
-              --message 'Publish $GITHUB_REPOSITORY@${{ steps.params.outputs.git_tag }} charts'
+              --message Publish\ $GITHUB_REPOSITORY@${{ steps.params.outputs.git_tag }}\ charts
           EOF
           )
           if [ ! -z  ${{ steps.params.outputs.release }} ]; then
-            pr_cmd="$pr_cmd --message 'Release: ${{ steps.params.outputs.release }}'"
+            pr_cmd="$pr_cmd --message Release:\ ${{ steps.params.outputs.release }}"
           fi
           if [ ! -z  ${{ steps.params.outputs.release_tracker }} ]; then
-            pr_cmd="$pr_cmd --message 'Release-tracker: ${{ steps.params.outputs.release_tracker }}'"
+            pr_cmd="$pr_cmd --message Release-tracker:\ ${{ steps.params.outputs.release_tracker }}"
           fi
-          pr_cmd="$pr_cmd --message 'Signed-off-by: $(git config --get user.name) <$(git config --get user.email)>'"
+          pr_cmd="$pr_cmd --message Signed-off-by:\ $(git config --get user.name)\ <$(git config --get user.email)>"
           $pr_cmd || true
