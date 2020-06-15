@@ -257,11 +257,11 @@ APP_VERSION      ?= $(CHART_VERSION)
 update-chart: $(shell find $$(pwd)/charts -maxdepth 1 -mindepth 1 -type d -printf 'update-chart-%f gen-chart-doc-%f ')
 
 update-chart-%:
-	@if [ ! -z "$(CHART_VERSION)" ]; then \
-		yq w -i ./charts/$*/Chart.yaml version $(CHART_VERSION); \
+	@if [ ! -z "$(CHART_VERSION)" ]; then                            \
+		yq w -i ./charts/$*/Chart.yaml version $(CHART_VERSION);     \
 	fi
-	@if [ ! -z "$(APP_VERSION)" ]; then \
-		yq w -i ./charts/$*/Chart.yaml appVersion $(APP_VERSION); \
+	@if [ ! -z "$(APP_VERSION)" ]; then                              \
+		yq w -i ./charts/$*/Chart.yaml appVersion $(APP_VERSION);    \
 		yq w -i ./charts/$*/values.yaml operator.tag $(APP_VERSION); \
 	fi
 
