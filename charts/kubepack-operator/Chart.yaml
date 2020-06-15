@@ -1,12 +1,12 @@
 apiVersion: v1
-description: 'Kubepack Operator by AppsCode'
+description: "Kubepack Operator by AppsCode"
 name: kubepack-operator
 version: v0.1.0
 appVersion: v0.1.0
 home: https://github.com/kubepack/kubepack-operator
 icon: https://cdn.appscode.com/images/products/kubepack/icons/android-icon-192x192.png
 sources:
-  - https://github.com/kubepack/kubepack-operator
+- https://github.com/kubepack/kubepack-operator
 maintainers:
-  - name: appscode
-    email: support@appscode.com
+- name: appscode
+  email: support@appscode.com
