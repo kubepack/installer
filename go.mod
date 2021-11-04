@@ -5,15 +5,18 @@ go 1.12
 require (
 	github.com/go-openapi/spec v0.19.8
 	github.com/gogo/protobuf v1.3.2
+	github.com/golang-jwt/jwt v0.0.0-00010101000000-000000000000 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/google/gofuzz v1.1.0
+	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/yudai/gojsondiff v1.0.0
+	golang.org/x/crypto v0.0.0-20210314154223-e6e6c4f2bb5b // indirect
 	gomodules.xyz/runtime v0.2.0
 	k8s.io/api v0.21.1
 	k8s.io/apimachinery v0.21.1
 	k8s.io/client-go v0.21.1
 	k8s.io/kube-openapi v0.0.0-20210305001622-591a79e4bda7
-	kmodules.xyz/client-go v0.0.0-20210719120358-dd0503cf99cf
+	kmodules.xyz/client-go v0.0.0-20211028132207-0cf6ea46b030
 	kmodules.xyz/crd-schema-fuzz v0.0.0-20210618002152-fae23aef5fb4
 	sigs.k8s.io/yaml v1.2.0
 )
@@ -130,4 +133,10 @@ replace kmodules.xyz/resource-metadata => kmodules.xyz/resource-metadata v0.5.0
 
 replace sigs.k8s.io/application => github.com/kmodules/application v0.8.4-0.20210427030912-90eeee3bc4ad
 
-replace github.com/satori/go.uuid => github.com/gofrs/uuid v4.0.0+incompatible
+replace github.com/satori/go.uuid => github.com/gomodules/uuid v4.0.0+incompatible
+
+replace github.com/dgrijalva/jwt-go => github.com/gomodules/jwt v3.2.2+incompatible
+
+replace github.com/golang-jwt/jwt => github.com/golang-jwt/jwt v3.2.2+incompatible
+
+replace github.com/form3tech-oss/jwt-go => github.com/form3tech-oss/jwt-go v3.2.5+incompatible
