@@ -8,6 +8,7 @@ require (
 	github.com/golang-jwt/jwt v0.0.0-00010101000000-000000000000 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/google/gofuzz v1.1.0
+	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/yudai/gojsondiff v1.0.0
 	golang.org/x/crypto v0.0.0-20210314154223-e6e6c4f2bb5b // indirect
