@@ -19,7 +19,6 @@ package v1alpha1_test
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"testing"
 
@@ -41,7 +40,7 @@ func TestDefaultValues(t *testing.T) {
 }
 
 func compareDefaultValues() (string, error) {
-	data, err := ioutil.ReadFile("../../../charts/kubepack-operator/values.yaml")
+	data, err := os.ReadFile("../../../charts/kubepack-operator/values.yaml")
 	if err != nil {
 		return "", err
 	}
