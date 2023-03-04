@@ -35,7 +35,7 @@ var plog = capnslog.NewPackageLogger("go.etcd.io/etcd", "pkg/fileutil")
 // to dir. It returns nil if dir is writable.
 func IsDirWriteable(dir string) error {
 	f := filepath.Join(dir, ".touch")
-	if err := ioutil.WriteFile(f, []byte(""), PrivateFileMode); err != nil {
+	if err := os.WriteFile(f, []byte(""), PrivateFileMode); err != nil {
 		return err
 	}
 	return os.Remove(f)
