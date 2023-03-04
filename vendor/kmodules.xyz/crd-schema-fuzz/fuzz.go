@@ -130,7 +130,7 @@ func SchemaFuzzTestForCRDWithPath(t *testing.T, scheme *runtime.Scheme, path str
 	convertor := runtime.UnsafeObjectConvertor(internalScheme)
 	codec := versioning.NewCodec(serializer, serializer, convertor, internalScheme, internalScheme, internalScheme, runtime.InternalGroupVersioner, runtime.InternalGroupVersioner, internalScheme.Name())
 
-	data, err := ioutil.ReadFile(path)
+	data, err := os.ReadFile(path)
 	if err != nil {
 		t.Fatalf("Failed to read CRD input file %q: %v", path, err)
 		return

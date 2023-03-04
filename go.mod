@@ -10,8 +10,11 @@ require (
 	github.com/google/gofuzz v1.1.0
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
+	github.com/modern-go/reflect2 v1.0.2
 	github.com/yudai/gojsondiff v1.0.0
-	golang.org/x/crypto v0.0.0-20210314154223-e6e6c4f2bb5b // indirect
+	go.bytebuilders.dev/license-proxyserver v0.0.3
+	golang.org/x/crypto v0.6.0 // indirect
+	golang.org/x/net v0.7.0
 	gomodules.xyz/runtime v0.2.0
 	k8s.io/api v0.21.1
 	k8s.io/apimachinery v0.21.1
